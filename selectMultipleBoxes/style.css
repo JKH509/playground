@@ -1,0 +1,25 @@
+.inbox {
+    max-width: 400px;
+    margin: 50px auto;
+    background: rgb(168, 168, 172);
+    border-radius: 5px;
+}
+.item{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+input:checked + p {
+    text-decoration: line-through;
+}
+input[type="checkbox"] {
+    margin: 15px;
+}
+p{
+    margin: 0;
+    padding: 20px;
+    transition: .2s;
+    flex: 1;
+    font-size: 18px;
+    border-left: 1px solid gray;
+}
