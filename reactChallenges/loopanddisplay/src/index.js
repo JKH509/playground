@@ -1,17 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import ScotchInfobar from "./ScotchInfoBar";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import "./index.css";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+/**
+  Pulls data from users-data.js
+*/
+import users from "./users-data";
+
+/**
+  Our React component where we display data
+ */
+
+function App() {
+  return (
+    <div className="App">
+      <div className="page-deets">
+        <h2>Iterate over Array and display data</h2>
+      </div>
+
+      {/* Iterate over imported array in userData */}
+      <div className="users">
+        {users.map((user, index) => (
+          <div key={index}>
+            <h3>{user.name}</h3>
+            <p>{user.location}</p>
+            <p>{user.car}</p>
+          </div>
+        ))}
+      </div>
+      <ScotchInfobar />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+
+
